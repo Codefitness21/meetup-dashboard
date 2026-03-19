@@ -7,7 +7,7 @@ import AnalyticsChart from "@/components/dashboard/AnalyticsChart";
 export default function Home() {
   return (
     <>
-      <h1 className="text-4xl text-center bg-white py-3">Networking Dashboard</h1>
+      <h1 className="text-4xl text-center bg-white py-3">Tech Networking Dashboard</h1>
       <div className="flex flex-row w-full py-20">
         <div className="event-section flex justify-center w-3/6">
           <div className="flex flex-col lg:flex-row justify-left h-100 opacity-85">

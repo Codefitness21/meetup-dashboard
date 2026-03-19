@@ -4,6 +4,7 @@ import logo from "@/public/img/KeLLab.png";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import avatar from "@/public/img/avatar.png";
 import DigitalClock from "@/components/clock/DigitalClock";
+import TodayDate from "../date/TodayDate";
 
 const Navbar = () => {
   return (
@@ -12,7 +13,8 @@ const Navbar = () => {
         <Image src={logo} alt="KeLLab Logo" width={70} />
       </Link>
      
-      <div className="flex flex-col self-center justify-right text-1xl"> <DigitalClock /></div>
+      <div className="flex flex-row self-center justify-right text-1xl gap-2"> <TodayDate /><DigitalClock /></div>
+
       <Avatar>
         <Image src={avatar} alt="avatar" width={40} className="rounded-3xl" />
         {/* <AvatarFallback className="text-black">KH</AvatarFallback> */}
