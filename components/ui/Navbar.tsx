@@ -3,6 +3,7 @@ import Link from "next/link";
 import logo from "@/public/img/KeLLab.png";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import avatar from "@/public/img/avatar.png";
+import DigitalClock from "@/components/clock/DigitalClock";
 
 const Navbar = () => {
   return (
@@ -10,12 +11,14 @@ const Navbar = () => {
       <Link href="/">
         <Image src={logo} alt="KeLLab Logo" width={70} />
       </Link>
-      <div className="flex flex-col self-center justify-right text-1xl">Tuesday, March 17, 2026, 10:44 pm</div>
+     
+      <div className="flex flex-col self-center justify-right text-1xl"> <DigitalClock /></div>
       <Avatar>
         <Image src={avatar} alt="avatar" width={40} className="rounded-3xl" />
         {/* <AvatarFallback className="text-black">KH</AvatarFallback> */}
       </Avatar>
     </div>
+    
   );
 };
 
