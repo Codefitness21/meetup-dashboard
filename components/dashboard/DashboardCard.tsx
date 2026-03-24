@@ -9,7 +9,7 @@ interface DashboardCardProps {
 
 const DashboardCard = ({ title, count, icon }: DashboardCardProps) => {
   return (
-    <Card className="bg-slate-100 w-160 text-2xl dark:bg-slate-800 pb-0">
+    <Card className="bg-slate-100 w-9/12 text-2xl dark:bg-slate-800 pb-0">
       <CardContent>
         <div className="flex gap-3 justify-center items-center">
           <h3 className="flex-row text-center">
