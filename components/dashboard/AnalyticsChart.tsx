@@ -22,9 +22,9 @@ import {
 export const description = "An area chart with a legend"
 
 const chartData = [
-  { month: "January", events: 10, people: 27 },
-  { month: "February", events: 9, people: 20 },
-  { month: "March", events: 7, people: 11 },
+  { month: "January", events: 9, people: 28 },
+  { month: "February", events: 8, people: 20 },
+  { month: "March", events: 7, people: 18 },
 ]
 
 const chartConfig = {
