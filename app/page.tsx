@@ -1,13 +1,11 @@
 import DashboardCard from "@/components/dashboard/DashboardCard";
-// import { NumberField, NumberFieldGroup, NumberFieldInput } from "@base-ui/react";
 import { Folder, Newspaper, Users } from "lucide-react";
 import AnalyticsChart from "@/components/dashboard/AnalyticsChart";
-import React from 'react';
-import { appendToGoogleSheet } from '@/src/action';
-// import EventsTable from "@/components/events/EventsTable";
+import { getGoogleSheet } from '@/src/action';
 
-export default function Home() {
-  
+export default async function Home() {
+  const data = await getGoogleSheet({})
+  console.log('Home data', data)
   return (
     <>
       <h1 className="text-4xl text-center bg-white py-3">Tech Networking Dashboard</h1>
@@ -17,7 +15,7 @@ export default function Home() {
             <DashboardCard 
               title="Meetup Events"
               icon={<Newspaper className="text-slate-500 " />}
-              events="Testing testr  gee. egeg  gpk;pgk kg;pkgpikgpikpgk joodo mo"
+              events="Testing"
             />
           </div>
         </div>
@@ -41,7 +39,6 @@ export default function Home() {
         </div>
       </div>
       <AnalyticsChart />
-      {/* <EventsTable limit={10} /> */}
     </>
   );
 }
