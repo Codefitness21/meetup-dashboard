@@ -2,7 +2,7 @@
 
 import { google } from 'googleapis';
 
-export async function getGoogleSheet(data: any) {
+export async function getGoogleSheet() {
 
   try {
     const auth = new google.auth.JWT({
@@ -19,7 +19,7 @@ export async function getGoogleSheet(data: any) {
     });
 
 
-   return response;
+   return response.data.values;
   } catch (error) {
     console.error('Error retrieving Google Sheet:', error);
     return null; // Or throw an error if you prefer

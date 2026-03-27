@@ -10,6 +10,7 @@ interface DashboardCardProps {
 }
 
 const DashboardCard = ({ title, data, icon, events }: DashboardCardProps) => {
+
   return (
     <Card className="bg-slate-100 w-9/12 text-2xl dark:bg-slate-800 pb-0">
       <CardContent>
