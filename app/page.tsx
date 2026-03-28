@@ -7,8 +7,13 @@ export default async function Home() {
   const data = await getGoogleSheet();
   console.log("Home data", data);
 
-  const totalConnections = data?.slice(1).reduce((sum: any, col: any) => sum + Number(col[4]), 0);
+  
+  const totalConnections = data?.slice(1).reduce((sum: any, col: any) => sum + Number(col[4] || 0), 0);
+
   const totalEvents = data?.slice(1).reduce((sum: any, col: any) => sum + Number(col[3]), 0);
+    
+console.log("totalEvents:", totalEvents);
+
 
   return (
     <>
@@ -17,11 +22,11 @@ export default async function Home() {
       </h1>
       <div className="flex flex-row w-full py-20">
         <div className="event-section flex flex-row justify-center w-3/6">
-          <div className="flex flex-row justify-center w-full opacity-85 font-bold">
+          <div className="flex flex-row justify-center w-full opacity-85 font-bold ">
             <DashboardCard
               title="Meetup Events"
               icon={<Newspaper className="text-slate-500 " />}
-              events="Testing"
+
             />
           </div>
         </div>
@@ -29,14 +34,14 @@ export default async function Home() {
         <div className="tally-section flex flex-col items-center w-3/6 opacity-85 font-bold">
           <div className="flex flex-col justify-center w-full md:flex-row mb-5 h-40">
             <DashboardCard
-              title="Total number of invested connections"
+              title="Total invested connections"
               data={totalConnections}
               icon={<Users className=" text-slate-500" />}
             />
           </div>
           <div className="flex flex-col justify-center w-full md:flex-row mb-5 h-40">
             <DashboardCard
-              title="Total number of meetups"
+              title="Total meetup events"
               data={totalEvents}
               icon={<Folder className="text-slate-500" />}
             />

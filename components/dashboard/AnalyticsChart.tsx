@@ -25,15 +25,15 @@ const chartData = [
   { month: "January", events: 9, people: 28 },
   { month: "February", events: 8, people: 20 },
   { month: "March", events: 7, people: 18 },
-  { month: "April", events: 9, people: 28 },
-  { month: "May", events: 8, people: 20 },
-  { month: "June", events: 7, people: 18 },
-  { month: "July", events: 9, people: 28 },
-  { month: "August", events: 8, people: 20 },
-  { month: "September", events: 7, people: 18 },
-  { month: "October", events: 9, people: 28 },
-  { month: "November", events: 8, people: 20 },
-  { month: "December", events: 7, people: 18 },
+  { month: "April", events: 0, people: 0 },
+  { month: "May", events: 0, people: 0 },
+  { month: "June", events: 0, people: 0 },
+  { month: "July", events: 0, people: 0 },
+  { month: "August", events: 0, people: 0 },
+  { month: "September", events: 0, people: 0 },
+  { month: "October", events: 0, people: 0 },
+  { month: "November", events: 0, people: 0 },
+  { month: "December", events: 0, people: 0 },
 ]
 
 const chartConfig = {
@@ -48,6 +48,7 @@ const chartConfig = {
 } satisfies ChartConfig
 
 export function AnalyticsChart() {
+  
   return (
     <Card className="opacity-85 mx-14 mb-5">
       <CardHeader className="text-center">
@@ -80,7 +81,7 @@ export function AnalyticsChart() {
               tickLine={false}
               axisLine={false}
               tickMargin={8}
-              tickCount={3}
+              tickCount={10}
             />
             <ChartTooltip
               cursor={false}

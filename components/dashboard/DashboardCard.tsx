@@ -6,10 +6,10 @@ interface DashboardCardProps {
   title: string;
   data?: number;
   icon: React.ReactElement<LucideIcon>;
-  events?: string;
+  
 }
 
-const DashboardCard = ({ title, data, icon, events }: DashboardCardProps) => {
+const DashboardCard = ({ title, data, icon }: DashboardCardProps) => {
 
   return (
     <Card className="bg-slate-100 w-9/12 text-2xl dark:bg-slate-800 pb-0">
@@ -19,7 +19,7 @@ const DashboardCard = ({ title, data, icon, events }: DashboardCardProps) => {
           {title}
         </div>
         <h6 className="text-base py-2">
-          {events}
+          
           </h6>
         <h3 className="text-5xl font-semibold text-slate-500 dark:text-slate-200 text-center">
           {data}
