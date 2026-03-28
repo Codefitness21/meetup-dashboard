@@ -7,9 +7,8 @@ export default async function Home() {
   const data = await getGoogleSheet();
   console.log("Home data", data);
 
-  
+  const monthlyEvents = events?.slice(1).map((sum: any, col: any) => sum + Number(col[4] || 0), 0);
   const totalConnections = data?.slice(1).reduce((sum: any, col: any) => sum + Number(col[4] || 0), 0);
-
   const totalEvents = data?.slice(1).reduce((sum: any, col: any) => sum + Number(col[3]), 0);
     
 console.log("totalEvents:", totalEvents);
@@ -25,8 +24,8 @@ console.log("totalEvents:", totalEvents);
           <div className="flex flex-row justify-center w-full opacity-85 font-bold ">
             <DashboardCard
               title="Meetup Events"
+              events={monthlyEvents}
               icon={<Newspaper className="text-slate-500 " />}
-
             />
           </div>
         </div>
