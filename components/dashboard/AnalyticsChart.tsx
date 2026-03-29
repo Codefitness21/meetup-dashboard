@@ -53,7 +53,7 @@ export function AnalyticsChart() {
     <Card className="opacity-85 mx-14 mb-5">
       <CardHeader className="text-center">
         <CardTitle className="text-2xl font-bold">2026 Analytics</CardTitle>
-        <CardDescription>
+        <CardDescription className="text-slate-900">
           Views Per Month
         </CardDescription>
       </CardHeader>

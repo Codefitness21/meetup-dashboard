@@ -6,10 +6,10 @@ interface DashboardCardProps {
   title: string;
   data?: any;
   icon: React.ReactElement<LucideIcon>;
-  events?:any;
+  place?: any;
 }
 
-const DashboardCard = ({ title, data, icon, events }: DashboardCardProps) => {
+const DashboardCard = ({ title, data, icon, place }: DashboardCardProps) => {
 
   return (
     <Card className="bg-slate-100 w-9/12 text-2xl dark:bg-slate-800 pb-0">
@@ -18,12 +18,13 @@ const DashboardCard = ({ title, data, icon, events }: DashboardCardProps) => {
           <h3>{icon}</h3>
           {title}
         </div>
-        <h3 className="text-5xl font-semibold text-slate-500 dark:text-slate-200 text-center">
+        <h3 className="flex flex-row justify-center text-5xl dark:text-slate-200 text-slate-700 m-1.5">
           {data}
         </h3>
-        <h6 className="text-1xl font-semibold text-slate-500 dark:text-slate-200 overflow-hidden">
-          {events}
-        </h6>
+        <h4 className="flex flex-col text-sm dark:text-slate-200 h-75 overflow-hidden overflow-y-scroll text-slate-700">
+          {place}
+          {/* {.map(({ key, value }:any) => ({ [key]: value }))} */}
+        </h4 >
       </CardContent>
     </Card>
   );

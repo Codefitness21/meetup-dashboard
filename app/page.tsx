@@ -3,17 +3,17 @@ import { Folder, Newspaper, Users } from "lucide-react";
 import AnalyticsChart from "@/components/dashboard/AnalyticsChart";
 import { getGoogleSheet } from "@/src/action";
 
+
 export default async function Home() {
   const data = await getGoogleSheet();
   console.log("Home data", data);
 
-  const monthlyEvents = events?.slice(1).map((sum: any, col: any) => sum + Number(col[4] || 0), 0);
+
+  const monthlyEvents = data?.slice(1).reduce((sum: any, col: any) => sum + col || 0, 0)
+
   const totalConnections = data?.slice(1).reduce((sum: any, col: any) => sum + Number(col[4] || 0), 0);
-  const totalEvents = data?.slice(1).reduce((sum: any, col: any) => sum + Number(col[3]), 0);
+  const totalEvents = data?.slice(1).reduce((sum: any, col: any) => sum + Number(col[3] || 0), 0);
     
-console.log("totalEvents:", totalEvents);
-
-
   return (
     <>
       <h1 className="text-4xl text-center bg-white py-3">
@@ -24,21 +24,21 @@ console.log("totalEvents:", totalEvents);
           <div className="flex flex-row justify-center w-full opacity-85 font-bold ">
             <DashboardCard
               title="Meetup Events"
-              events={monthlyEvents}
+              place={monthlyEvents}
               icon={<Newspaper className="text-slate-500 " />}
             />
           </div>
         </div>
 
         <div className="tally-section flex flex-col items-center w-3/6 opacity-85 font-bold">
-          <div className="flex flex-col justify-center w-full md:flex-row mb-5 h-40">
+          <div className="flex flex-col justify-center w-full md:flex-row mb-5 h-35">
             <DashboardCard
               title="Total invested connections"
               data={totalConnections}
               icon={<Users className=" text-slate-500" />}
             />
           </div>
-          <div className="flex flex-col justify-center w-full md:flex-row mb-5 h-40">
+          <div className="flex flex-col justify-center w-full md:flex-row mb-5 h-35">
             <DashboardCard
               title="Total meetup events"
               data={totalEvents}
