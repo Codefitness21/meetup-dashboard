@@ -15,7 +15,7 @@ const DashboardCard = ({ title, data, icon, place, id }: DashboardCardProps) => 
   return (
     <Card className="bg-slate-100 w-9/12 lg:text-2xl dark:bg-slate-800 pb-0">
       <CardContent>
-        <div className="flex flex-row gap-3 justify-center items-center ">
+        <div className="flex flex-row gap-3 text-md justify-center items-center ">
           <h3>{icon}</h3>
           {title}
         </div>
