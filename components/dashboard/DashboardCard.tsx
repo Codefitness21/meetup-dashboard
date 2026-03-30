@@ -7,9 +7,10 @@ interface DashboardCardProps {
   data?: any;
   icon: React.ReactElement<LucideIcon>;
   place?: any;
+  id?: any;
 }
 
-const DashboardCard = ({ title, data, icon, place }: DashboardCardProps) => {
+const DashboardCard = ({ title, data, icon, place, id }: DashboardCardProps) => {
 
   return (
     <Card className="bg-slate-100 w-9/12 text-2xl dark:bg-slate-800 pb-0">
@@ -21,8 +22,8 @@ const DashboardCard = ({ title, data, icon, place }: DashboardCardProps) => {
         <h3 className="flex flex-row justify-center text-5xl dark:text-slate-200 text-slate-700 m-1.5">
           {data}
         </h3>
-        <li className="flex flex-col text-sm dark:text-slate-200 h-75 overflow-hidden overflow-y-scroll text-slate-700">
-          {place}
+        <li className="flex flex-col text-sm dark:text-slate-200 gap-2 h-75 overflow-hidden overflow-y-scroll text-slate-700">
+          {place }
         </li >
       </CardContent>
     </Card>

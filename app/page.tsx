@@ -3,33 +3,37 @@ import { Folder, Newspaper, Users } from "lucide-react";
 import AnalyticsChart from "@/components/dashboard/AnalyticsChart";
 import { getGoogleSheet } from "@/src/action";
 
-
 export default async function Home() {
   const data = await getGoogleSheet();
   console.log("Home data", data);
 
+  const events = data?.slice(1).map((col: any) => {
+    return {
+      month: col[0],
+      date: col[1],
+      place: col[2],
+      id: col[0] + col[1] + col[2],
+    };
+  });
 
-const events = data?.slice(1).map((col: any) => {
-return{
-  month: col[0],
-  date: col[1],
-  place: col[2]
-}
-})
+  const monthlyEvents = events?.map((event) => {
+    return (
+      <ul key={event.id}>
+        <li className="text-slate-900 mb-1 text-2xl">{event.month}</li>
+          <li className="text-slate-900">{event.date } -
+        {event.place }</li>
+      </ul>
+    );
+  });
 
-const monthlyEvents = events?.map((event) => {
-    return(
-        <li>
-        {event.month} 
-        {event.date} 
-        {event.place}
-        </li>
-    )
-});
 
-  const totalConnections = data?.slice(1).reduce((sum: any, col: any) => sum + Number(col[4] || 0), 0);
-  const totalEvents = data?.slice(1).reduce((sum: any, col: any) => sum + Number(col[3] || 0), 0);
-    
+  const totalConnections = data
+    ?.slice(1)
+    .reduce((sum: any, col: any) => sum + Number(col[4] || 0), 0);
+  const totalEvents = data
+    ?.slice(1)
+    .reduce((sum: any, col: any) => sum + Number(col[3] || 0), 0);
+
   return (
     <>
       <h1 className="text-4xl text-center bg-white py-3">
