@@ -7,7 +7,7 @@ export async function getGoogleSheet() {
   try {
     const auth = new google.auth.JWT({
       email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
-      key: process.env.GOOGLE_SHEETS_PRIVATE_KEY,
+      key: process.env.GOOGLE_SHEETS_PRIVATE_KEY!.replace("\\n", "\n"),
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
 
