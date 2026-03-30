@@ -21,10 +21,9 @@ const DashboardCard = ({ title, data, icon, place }: DashboardCardProps) => {
         <h3 className="flex flex-row justify-center text-5xl dark:text-slate-200 text-slate-700 m-1.5">
           {data}
         </h3>
-        <h4 className="flex flex-col text-sm dark:text-slate-200 h-75 overflow-hidden overflow-y-scroll text-slate-700">
+        <li className="flex flex-col text-sm dark:text-slate-200 h-75 overflow-hidden overflow-y-scroll text-slate-700">
           {place}
-          {/* {.map(({ key, value }:any) => ({ [key]: value }))} */}
-        </h4 >
+        </li >
       </CardContent>
     </Card>
   );

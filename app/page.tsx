@@ -9,7 +9,23 @@ export default async function Home() {
   console.log("Home data", data);
 
 
-  const monthlyEvents = data?.slice(1).reduce((sum: any, col: any) => sum + col || 0, 0)
+const events = data?.slice(1).map((col: any) => {
+return{
+  month: col[0],
+  date: col[1],
+  place: col[2]
+}
+})
+
+const monthlyEvents = events?.map((event) => {
+    return(
+        <li>
+        {event.month} 
+        {event.date} 
+        {event.place}
+        </li>
+    )
+});
 
   const totalConnections = data?.slice(1).reduce((sum: any, col: any) => sum + Number(col[4] || 0), 0);
   const totalEvents = data?.slice(1).reduce((sum: any, col: any) => sum + Number(col[3] || 0), 0);
