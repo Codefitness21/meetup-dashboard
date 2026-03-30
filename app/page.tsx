@@ -2,6 +2,7 @@ import DashboardCard from "@/components/dashboard/DashboardCard";
 import { Folder, Newspaper, Users } from "lucide-react";
 import AnalyticsChart from "@/components/dashboard/AnalyticsChart";
 import { getGoogleSheet } from "@/src/action";
+import { reverse } from "dns";
 
 
 export default async function Home() {
@@ -10,7 +11,7 @@ export default async function Home() {
 
 
   
-  const events = data?.slice(1).map((col: any) => {
+  const events = data?.slice(1).reverse().map((col: any) => {
     return {
       month: col[0],
       date: col[1],
@@ -19,12 +20,12 @@ export default async function Home() {
     };
   })
 
-  const monthlyEvents = events?.reverse().map((event) => {
+  const monthlyEvents = events?.map((event) => {
     return (
       
       <ul key={event.id}>
         <li className="text-slate-900 mb-1 text-2xl">{event.month}</li>
-          <li className="text-slate-900">{event.date } -
+          <li className="text-slate-900">{event.date }
         {event.place }</li>
       </ul>
     );
