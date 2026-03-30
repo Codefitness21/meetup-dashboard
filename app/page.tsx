@@ -2,6 +2,7 @@ import DashboardCard from "@/components/dashboard/DashboardCard";
 import { Folder, Newspaper, Users } from "lucide-react";
 import AnalyticsChart from "@/components/dashboard/AnalyticsChart";
 import { getGoogleSheet } from "@/src/action";
+export const dynamic = 'force-dynamic'
 
 export default async function Home() {
   const data = await getGoogleSheet();
