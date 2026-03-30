@@ -41,11 +41,11 @@ export default async function Home() {
       </h1>
       <div className="flex flex-row w-full py-20">
         <div className="event-section flex flex-row justify-center w-3/6">
-          <div className="flex flex-row justify-center w-full opacity-85 font-bold ">
+          <div className="flex flex-row justify-center w-full opacity-85 font-bold">
             <DashboardCard
               title="Meetup Events"
               place={monthlyEvents}
-              icon={<Newspaper className="text-slate-500 " />}
+              icon={<Newspaper className="text-slate-500" />}
             />
           </div>
         </div>
