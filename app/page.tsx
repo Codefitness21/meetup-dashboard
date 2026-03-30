@@ -2,7 +2,7 @@ import DashboardCard from "@/components/dashboard/DashboardCard";
 import { Folder, Newspaper, Users } from "lucide-react";
 import AnalyticsChart from "@/components/dashboard/AnalyticsChart";
 import { getGoogleSheet } from "@/src/action";
-export const dynamic = 'force-dynamic'
+
 
 export default async function Home() {
   const data = await getGoogleSheet();
@@ -40,9 +40,9 @@ export default async function Home() {
       <h1 className="text-4xl text-center bg-white py-3">
         Tech Networking Dashboard
       </h1>
-      <div className="flex flex-row w-full py-20">
-        <div className="event-section flex flex-row justify-center w-3/6">
-          <div className="flex flex-row justify-center w-full opacity-85 font-bold">
+      <div className="flex flex-col lg:flex-row md:flex-col justify-center w-full py-20">
+        <div className="event-section flex flex-row justify-center lg:w-3/6">
+          <div className="flex flex-row justify-center w-full opacity-85 font-bold lg:mb-0 md:mb-5 mb-5">
             <DashboardCard
               title="Meetup Events"
               place={monthlyEvents}
@@ -51,15 +51,15 @@ export default async function Home() {
           </div>
         </div>
 
-        <div className="tally-section flex flex-col items-center w-3/6 opacity-85 font-bold">
-          <div className="flex flex-col justify-center w-full md:flex-row mb-5 h-35">
+        <div className="tally-section flex flex-col justify-center lg:w-3/6 opacity-85 font-bold">
+          <div className="flex flex-row justify-center w-full md:flex-row mb-5 h-35">
             <DashboardCard
               title="Total invested connections"
               data={totalConnections}
               icon={<Users className=" text-slate-500" />}
             />
           </div>
-          <div className="flex flex-col justify-center w-full md:flex-row mb-5 h-35">
+          <div className="flex flex-row justify-center w-full md:flex-row mb-5 h-35">
             <DashboardCard
               title="Total meetup events"
               data={totalEvents}
