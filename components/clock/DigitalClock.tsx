@@ -31,7 +31,7 @@ function padZero(number:number){
 }
 
  return(
-    <div className='clock-container'>
+    <div className='clock-container' >
             <div className='clock'>
                 <span>{formatTime()}</span>
             </div>

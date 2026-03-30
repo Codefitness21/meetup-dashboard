@@ -8,6 +8,8 @@ export default async function Home() {
   const data = await getGoogleSheet();
   console.log("Home data", data);
 
+
+  
   const events = data?.slice(1).map((col: any) => {
     return {
       month: col[0],
@@ -15,10 +17,11 @@ export default async function Home() {
       place: col[2],
       id: col[0] + col[1] + col[2],
     };
-  });
+  })
 
-  const monthlyEvents = events?.map((event) => {
+  const monthlyEvents = events?.reverse().map((event) => {
     return (
+      
       <ul key={event.id}>
         <li className="text-slate-900 mb-1 text-2xl">{event.month}</li>
           <li className="text-slate-900">{event.date } -
