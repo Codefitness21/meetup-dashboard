@@ -14,9 +14,9 @@ export default async function Home() {
   
   const events = data?.slice(1).reverse().map((col: any) => {
     return {
-      month: col[0],
       date: col[1],
       place: col[2],
+       month: col[0],
       id: col[0] + col[1] + col[2],
     };
   })
@@ -26,7 +26,7 @@ export default async function Home() {
       
       <ul key={event.id}>
         <li className="text-slate-900 mb-1 text-2xl">{event.month}</li>
-          <li className="text-slate-900">{event.date }
+          <li className="text-slate-900">{event.date}
         {event.place }</li>
       </ul>
     );
@@ -57,14 +57,14 @@ export default async function Home() {
         </div>
 
         <div className="tally-section flex flex-col justify-center lg:w-3/6 opacity-85 font-bold">
-          <div className="flex flex-row justify-center w-full md:flex-row mb-5 h-35">
+          <div className="flex flex-row justify-center w-full md:flex-row mb-5 lg:h-30 h-25">
             <DashboardCard
               title="Total invested connections"
               data={totalConnections}
               icon={<Users className=" text-slate-500" />}
             />
           </div>
-          <div className="flex flex-row justify-center w-full md:flex-row mb-5 h-35">
+          <div className="flex flex-row justify-center w-full md:flex-row mb-5 lg:h-30 h-25">
             <DashboardCard
               title="Total meetup events"
               data={totalEvents}
