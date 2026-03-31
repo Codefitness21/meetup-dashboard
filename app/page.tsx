@@ -1,8 +1,9 @@
+export const dynamic = "force-dynamic";
+
 import DashboardCard from "@/components/dashboard/DashboardCard";
 import { Folder, Newspaper, Users } from "lucide-react";
 import AnalyticsChart from "@/components/dashboard/AnalyticsChart";
 import { getGoogleSheet } from "@/src/action";
-import { reverse } from "dns";
 
 
 export default async function Home() {
