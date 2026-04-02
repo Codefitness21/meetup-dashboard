@@ -30,7 +30,7 @@ export default async function Home() {
 
     return (
     <ul key={month.id}>
-      <li className="text-2xl" key={month.id}>{month}</li>
+      <li className="text-lg" key={month.id}>{month}</li>
       {event.map((event:any) => (
           <li key={event.id}>{event.date}{event.place}</li>   
       ))}
