@@ -32,7 +32,7 @@ export default async function Home() {
     <ul key={month.id}>
       <li className="text-lg" key={month.id}>{month}</li>
       {event.map((event:any) => (
-          <li key={event.id}>{event.date}{event.place}</li>   
+          <li className="mb-2" key={event.id}>{event.date}{event.place}</li>   
       ))}
       </ul>
     );
