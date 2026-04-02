@@ -10,28 +10,33 @@ export default async function Home() {
   const data = await getGoogleSheet();
   console.log("Home data", data);
 
+  let currentMonth = "";
+  const events = data?.slice(1).map((col: any) => {
 
-  
-  const events = data?.slice(1).reverse().map((col: any) => {
-    return {
-      date: col[1],
-      place: col[2],
-       month: col[0],
-      id: col[0] + col[1] + col[2],
-    };
-  })
+    if (col[0]) {
+      currentMonth = col[0]
+    }
+      return {
+        month: currentMonth,
+        date: col[1],
+        place: col[2],
+        id: col[0] + col[1] + col[2],
+      };
+    });
 
-  const monthlyEvents = events?.map((event) => {
+  const grouped = Object.groupBy(events || [], ({ month }: any) => month);
+
+  const monthlyEvents = Object.entries(grouped).reverse().map(([month, event]: any) => {
+
     return (
-      
-      <ul key={event.id}>
-        <li className="text-slate-900 mb-1 text-2xl">{event.month}</li>
-          <li className="text-slate-900">{event.date}
-        {event.place }</li>
+    <ul key={month.id}>
+      <li key={event.id}>{month}</li>
+      {event.map((event:any) => (
+          <li key={event.id}>{event.date}{event.place}</li>   
+      ))}
       </ul>
     );
   });
-
 
   const totalConnections = data
     ?.slice(1)
