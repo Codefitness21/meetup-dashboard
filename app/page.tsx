@@ -20,7 +20,7 @@ export default async function Home() {
         month: currentMonth,
         date: col[1],
         place: col[2],
-        id: col[0] + col[1] + col[2],
+        id:  col[1] + col[2],
       };
     });
 
@@ -30,7 +30,7 @@ export default async function Home() {
 
     return (
     <ul key={month.id}>
-      <li className="text-lg" key={month.id}>{month}</li>
+      <li key={month.id} className="text-lg">{month}</li>
       {event.map((event:any) => (
           <li className="mb-2" key={event.id}>{event.date}{event.place}</li>   
       ))}
@@ -52,7 +52,7 @@ export default async function Home() {
       </h1>
       <div className="flex flex-col lg:flex-row md:flex-col justify-center w-full py-20">
         <div className="event-section flex flex-row justify-center lg:w-3/6">
-          <div className="flex flex-row justify-center w-full opacity-85 font-bold lg:mb-0 md:mb-5 mb-5">
+          <div className="flex flex-row justify-center w-full opacity-90 font-bold lg:mb-0 md:mb-5 mb-5">
             <DashboardCard
               title="Meetup Events"
               place={monthlyEvents}
@@ -61,7 +61,7 @@ export default async function Home() {
           </div>
         </div>
 
-        <div className="tally-section flex flex-col justify-center lg:w-3/6 opacity-85 font-bold">
+        <div className="tally-section flex flex-col justify-center lg:w-3/6 opacity-90 font-bold">
           <div className="flex flex-row justify-center w-full md:flex-row mb-5 lg:h-30 h-25">
             <DashboardCard
               title="Total invested connections"

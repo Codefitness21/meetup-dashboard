@@ -50,7 +50,7 @@ const chartConfig = {
 export function AnalyticsChart() {
   
   return (
-    <Card className="opacity-85 m-1 lg:mx-14 mb-5">
+    <Card className="opacity-90 m-1 lg:mx-14 mb-5">
       <CardHeader className="text-center">
         <CardTitle className="text-2xl font-bold">2026 Analytics</CardTitle>
         <CardDescription className="text-slate-900">
