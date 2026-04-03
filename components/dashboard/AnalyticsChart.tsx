@@ -23,7 +23,7 @@ export const description = "An area chart with a legend"
 
 const chartData = [
   { month: "January", events: 9, people: 28 },
-  { month: "February", events: 8, people: 20 },
+  { month: "February", events: 8, people: 21 },
   { month: "March", events: 7, people: 18 },
   { month: "April", events: 0, people: 0 },
   { month: "May", events: 0, people: 0 },
