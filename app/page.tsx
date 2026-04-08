@@ -38,12 +38,8 @@ export default async function Home() {
     );
   });
 
-  const totalConnections = data
-    ?.slice(1)
-    .reduce((sum: any, col: any) => sum + Number(col[4] || 0), 0);
-  const totalEvents = data
-    ?.slice(1)
-    .reduce((sum: any, col: any) => sum + Number(col[3] || 0), 0);
+  const totalConnections = data?.slice(1).reduce((sum: any, col: any) => sum + Number(col[4] || 0), 0);
+  const totalEvents = data?.slice(1).reduce((sum: any, col: any) => sum + Number(col[3] || 0), 0);
 
   return (
     <>

@@ -25,7 +25,7 @@ const chartData = [
   { month: "January", events: 9, people: 28 },
   { month: "February", events: 8, people: 21 },
   { month: "March", events: 6, people: 19 },
-  { month: "April", events: 0, people: 0 },
+  { month: "April", events: 1, people: 6 },
   { month: "May", events: 0, people: 0 },
   { month: "June", events: 0, people: 0 },
   { month: "July", events: 0, people: 0 },
