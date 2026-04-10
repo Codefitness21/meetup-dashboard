@@ -50,7 +50,7 @@ export default async function Home() {
         <div className="event-section flex flex-row justify-center lg:w-3/6">
           <div className="flex flex-row justify-center w-full opacity-90 font-bold lg:mb-0 md:mb-5 mb-5">
             <DashboardCard
-              title="Meetup Events"
+              title="2026 Meetup Events"
               place={monthlyEvents}
               icon={<Newspaper className="text-slate-500" />}
             />
