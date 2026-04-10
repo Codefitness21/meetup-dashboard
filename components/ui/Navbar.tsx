@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/img/KeLLab.png";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar} from "@/components/ui/avatar";
 import avatar from "@/public/img/avatar.png";
 import DigitalClock from "@/components/clock/DigitalClock";
 import TodayDate from "../date/TodayDate";
