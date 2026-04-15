@@ -1,5 +1,6 @@
 "use client"
 
+import { getGoogleSheet } from "@/src/action";
 import { Area, AreaChart, CartesianGrid, XAxis, YAxis, ResponsiveContainer } from "recharts"
 
 import {
@@ -26,15 +27,17 @@ const chartData = [
   { month: "February", events: 8, people: 21 },
   { month: "March", events: 6, people: 20 },
   { month: "April", events: 3, people: 13 },
-  { month: "May", events: 0, people: 0 },
-  { month: "June", events: 0, people: 0 },
-  { month: "July", events: 0, people: 0 },
-  { month: "August", events: 0, people: 0 },
-  { month: "September", events: 0, people: 0 },
-  { month: "October", events: 0, people: 0 },
-  { month: "November", events: 0, people: 0 },
-  { month: "December", events: 0, people: 0 },
 ]
+
+// const data = await getGoogleSheet();
+// const chartData = data?.slice(1).map((col: any) => ({
+//   month: col[0],
+//   events: col[3],
+//   people: col[4],
+// }));
+
+//  const totalConnections = data?.reduce((sum: any, col: any) => sum + Number(col[4] || 0), 0);
+//  const totalEvents = data?.reduce((sum: any, col: any) => sum + Number(col[3] || 0), 0);
 
 const chartConfig = {
   events: {
@@ -88,6 +91,7 @@ export function AnalyticsChart() {
               content={<ChartTooltipContent indicator="line" />}
             />
             <Area
+            //  data={totalConnections}
               dataKey="people"
               type="natural"
               fill="var(--color-people)"
@@ -97,6 +101,7 @@ export function AnalyticsChart() {
             
             />
             <Area
+              // data={totalEvents}
               dataKey="events"
               type="natural"
               fill="var(--color-events)"

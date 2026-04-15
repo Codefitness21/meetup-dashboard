@@ -29,12 +29,12 @@ export default async function Home() {
   const monthlyEvents = Object.entries(grouped).reverse().map(([month, event]: any) => {
 
     return (
-    <ul key={month.id}>
-      <li key={month.id} className="text-lg">{month}</li>
+    <div key={month.id}>
+      <div key={month.id} className="text-lg">{month}</div>
       {event.map((event:any) => (
-          <li className="mb-2" key={event.id}>{event.date}{event.place}</li>   
+          <div className="mb-2" key={event.id}>{event.date}{event.place}</div>   
       ))}
-      </ul>
+      </div>
     );
   });
 
