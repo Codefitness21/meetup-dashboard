@@ -24,20 +24,33 @@ export const description = "An area chart with a legend"
 
 const chartData = [
   { month: "January", events: 9, people: 28 },
-  { month: "February", events: 8, people: 21 },
+  { month: "February", events: 8, people: 19 },
   { month: "March", events: 6, people: 20 },
-  { month: "April", events: 3, people: 13 },
+  { month: "April", events: 5, people: 16 }, 
 ]
 
 // const data = await getGoogleSheet();
-// const chartData = data?.slice(1).map((col: any) => ({
-//   month: col[0],
-//   events: col[3],
-//   people: col[4],
-// }));
+// const chartData = data?.slice(1).reduce((acc:any, col:any) => {
+// if (col[0]){ 
 
-//  const totalConnections = data?.reduce((sum: any, col: any) => sum + Number(col[4] || 0), 0);
-//  const totalEvents = data?.reduce((sum: any, col: any) => sum + Number(col[3] || 0), 0);
+// }else {
+
+// }
+  
+//   return col; 
+// }, []);
+
+
+
+// const chartData = data?.slice(1).reduce((acc: any, col: any) => {
+//   acc.push({
+//     month: col[0],
+//     events: col[3],
+//     people: col[4],
+//   });
+//   return acc;
+// }, []);
+
 
 const chartConfig = {
   events: {
@@ -78,20 +91,19 @@ export function AnalyticsChart() {
               tickLine={false}
               axisLine={false}
               tickMargin={10}
-              tickFormatter={(value) => value.slice(0, 3)}
+              // tickFormatter={(value) => value.slice(0, 3)}
             />
             <YAxis className="font-bold"
               tickLine={false}
               axisLine={false}
               tickMargin={8}
-              tickCount={10}
+              // tickCount={10}
             />
             <ChartTooltip
               cursor={false}
               content={<ChartTooltipContent indicator="line" />}
             />
             <Area
-            //  data={totalConnections}
               dataKey="people"
               type="natural"
               fill="var(--color-people)"
@@ -101,7 +113,6 @@ export function AnalyticsChart() {
             
             />
             <Area
-              // data={totalEvents}
               dataKey="events"
               type="natural"
               fill="var(--color-events)"
