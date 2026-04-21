@@ -22,35 +22,29 @@ import {
 
 export const description = "An area chart with a legend"
 
-const chartData = [
-  { month: "January", events: 9, people: 28 },
-  { month: "February", events: 8, people: 19 },
-  { month: "March", events: 6, people: 20 },
-  { month: "April", events: 5, people: 16 }, 
-]
+// const chartData = [
+//   { month: "January", events: 9, people: 28 },
+//   { month: "February", events: 8, people: 19 },
+//   { month: "March", events: 6, people: 20 },
+//   { month: "April", events: 5, people: 16 }, 
+// ]
 
-// const data = await getGoogleSheet();
-// const chartData = data?.slice(1).reduce((acc:any, col:any) => {
-// if (col[0]){ 
-
-// }else {
-
-// }
-  
-//   return col; 
-// }, []);
-
-
-
-// const chartData = data?.slice(1).reduce((acc: any, col: any) => {
-//   acc.push({
-//     month: col[0],
-//     events: col[3],
-//     people: col[4],
-//   });
-//   return acc;
-// }, []);
-
+const data = await getGoogleSheet();
+const chartData = data?.slice(1).reduce((acc, col) =>  {
+if (col[0]){ 
+acc.push({
+  month: col[0],
+  events: 0,
+  people: 0,
+})
+acc[acc.length-1].events += Number(col[3])
+  acc[acc.length-1].people += Number(col[4])
+}else {
+  acc[acc.length-1].events += Number(col[3])
+  acc[acc.length-1].people += Number(col[4])
+}
+ return acc; 
+}, []);
 
 const chartConfig = {
   events: {
