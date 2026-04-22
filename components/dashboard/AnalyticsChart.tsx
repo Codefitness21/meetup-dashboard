@@ -29,7 +29,23 @@ export const description = "An area chart with a legend"
 //   { month: "April", events: 5, people: 16 }, 
 // ]
 
+
+
+const chartConfig = {
+  events: {
+    label: "Events",
+    color: "var(--chart-1)",
+  },
+  people: {
+    label: "People",
+    color: "var(--chart-2)",
+  },
+} satisfies ChartConfig
+
 const data = await getGoogleSheet();
+export function AnalyticsChart() {
+
+
 const chartData = data?.slice(1).reduce((acc, col) =>  {
 if (col[0]){ 
 acc.push({
@@ -46,18 +62,6 @@ acc[acc.length-1].events += Number(col[3])
  return acc; 
 }, []);
 
-const chartConfig = {
-  events: {
-    label: "Events",
-    color: "var(--chart-1)",
-  },
-  people: {
-    label: "People",
-    color: "var(--chart-2)",
-  },
-} satisfies ChartConfig
-
-export function AnalyticsChart() {
   
   return (
     <Card className="opacity-90 m-1 lg:mx-14 mb-5">
