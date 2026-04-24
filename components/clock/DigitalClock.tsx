@@ -1,42 +1,42 @@
-"use client"
+// "use client"
 
-import React, {useState, useEffect} from 'react';
+// import React, {useState, useEffect} from 'react';
 
-function DigitalClock(){
+// function DigitalClock(){
 
-const [time, setTime] = useState(new Date());
+// const [time, setTime] = useState(new Date());
 
-useEffect(() => {
-const intervalId = setInterval(() => {
-    setTime(new Date());
-}, 1000);
+// useEffect(() => {
+// const intervalId = setInterval(() => {
+//     setTime(new Date());
+// }, 1000);
 
-return () => {
-    clearInterval(intervalId);
-}
-}, []);
+// return () => {
+//     clearInterval(intervalId);
+// }
+// }, []);
 
-function formatTime() {
-    let hours = time.getHours();
-    const minutes = time.getMinutes();
-    const meridiem = hours >= 12 ? "PM" : "AM";
+// function formatTime() {
+//     let hours = time.getHours();
+//     const minutes = time.getMinutes();
+//     const meridiem = hours >= 12 ? "PM" : "AM";
 
-    hours = hours % 12 || 12;
+//     hours = hours % 12 || 12;
 
-   return `${hours}:${padZero(minutes)} ${meridiem}`;
-}
+//    return `${hours}:${padZero(minutes)} ${meridiem}`;
+// }
 
-function padZero(number:number){
-    return (number < 10 ? "0" : "") + number;
-}
+// function padZero(number:number){
+//     return (number < 10 ? "0" : "") + number;
+// }
 
- return(
-    <div className='clock-container' >
-            <div className='clock'>
-                <span>{formatTime()}</span>
-            </div>
-    </div>
-    );
-}
+//  return(
+//     <div className='clock-container' >
+//             <div className='clock'>
+//                 <span>{formatTime()}</span>
+//             </div>
+//     </div>
+//     );
+// }
 
-export default DigitalClock;
+// export default DigitalClock;

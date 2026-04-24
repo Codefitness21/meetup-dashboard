@@ -1,33 +1,33 @@
-"use client"
+// "use client"
 
-import React, {useState, useEffect} from 'react';
+// import React, {useState, useEffect} from 'react';
 
-function TodayDate(){
+// function TodayDate(){
 
-const [currentDate, setCurrentDate] = useState(new Date());
+// const [currentDate, setCurrentDate] = useState(new Date());
 
-useEffect(() => {
-const intervalId = setInterval(() => {
-    setCurrentDate(new Date());
-}, 1000);
+// useEffect(() => {
+// const intervalId = setInterval(() => {
+//     setCurrentDate(new Date());
+// }, 1000);
 
-return () => 
-    clearInterval(intervalId);
+// return () => 
+//     clearInterval(intervalId);
 
-}, []);
+// }, []);
 
-function formatDate() {
-    const date = currentDate.toDateString();
-   return `${date},`;
-}
+// function formatDate() {
+//     const date = currentDate.toDateString();
+//    return `${date},`;
+// }
 
- return(
-    <div className='date-container'>
-            <div className='today-date'>
-                <span>{formatDate()}</span>
-            </div>
-    </div>
-    );
-}
+//  return(
+//     <div className='date-container'>
+//             <div className='today-date'>
+//                 <span>{formatDate()}</span>
+//             </div>
+//     </div>
+//     );
+// }
 
-export default TodayDate;
+// export default TodayDate;
