@@ -10,9 +10,9 @@ export default async function Home() {
   const data = await getGoogleSheet();
   console.log("Home data", data);
 
-  let currentMonth = "";
+  
   const events = data?.slice(1).map((col: any) => {
-
+let currentMonth = "";
     if (col[0]) {
       currentMonth = col[0]
     }
