@@ -1,5 +1,6 @@
 "use client"
 
+import GraphChart from "../graph/GraphMetrics";
 import { getGoogleSheet } from "@/src/action";
 import { Area, AreaChart, CartesianGrid, XAxis, YAxis} from "recharts"
 
@@ -22,29 +23,12 @@ import {
 
 export const description = "An area chart with a legend"
 
-// const chartData = [
-//   { month: "January", events: 9, people: 28 },
-//   { month: "February", events: 8, people: 19 },
-//   { month: "March", events: 6, people: 20 },
-//   { month: "April", events: 5, people: 16 }, 
-// ]
-
- const data = await getGoogleSheet(); 
-const chartData = data?.slice(1).reduce((acc, col) =>  {
-if (col[0]){ 
-acc.push({
-  month: col[0],
-  events: 0,
-  people: 0,
-})
-acc[acc.length-1].events += Number(col[3])
-  acc[acc.length-1].people += Number(col[4])
-}else {
-  acc[acc.length-1].events += Number(col[3])
-  acc[acc.length-1].people += Number(col[4])
-}
- return acc; 
-}, []);
+const chartData = [
+  { month: "January", events: 9, people: 28 },
+  { month: "February", events: 8, people: 19 },
+  { month: "March", events: 6, people: 20 },
+  { month: "April", events: 6, people: 18 }, 
+]
 
 const chartConfig = {
   events: {
@@ -70,7 +54,6 @@ export function AnalyticsChart() {
       <CardContent >
         
         <ChartContainer className="h-96 w-full sm:basis-full min-h" config={chartConfig} >
-          
           <AreaChart
             accessibilityLayer
             data={chartData}
