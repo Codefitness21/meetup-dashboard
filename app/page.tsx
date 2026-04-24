@@ -2,43 +2,44 @@ export const dynamic = "force-dynamic";
 
 import DashboardCard from "@/components/dashboard/DashboardCard";
 import { Folder, Newspaper, Users } from "lucide-react";
-// import AnalyticsChart from "@/components/dashboard/AnalyticsChart";
+import AnalyticsChart from "@/components/dashboard/AnalyticsChart";
 import { getGoogleSheet } from "@/src/action";
 
 
+
 export default async function Home() {
-  // const data = await getGoogleSheet();
-  // console.log("Home data", data);
+  const data = await getGoogleSheet();
+  console.log("Home data", data);
 
-  // let currentMonth = "";
-  // const events = data?.slice(1).map((col: any) => {
-  //   if (col[0]) {
-  //     currentMonth = col[0]
-  //   }
-  //     return {
-  //       month: currentMonth,
-  //       date: col[1],
-  //       place: col[2],
-  //       id:  col[1] + col[2],
-  //     };
-  //   });
+  let currentMonth = "";
+  const events = data?.slice(1).map((col: any) => {
+    if (col[0]) {
+      currentMonth = col[0]
+    }
+      return {
+        month: currentMonth,
+        date: col[1],
+        place: col[2],
+        id:  col[1] + col[2],
+      };
+    });
 
-  // const grouped = Object.groupBy(events || [], ({ month }: any) => month);
+  const grouped = Object.groupBy(events || [], ({ month }: any) => month);
 
-  // const monthlyEvents = Object.entries(grouped).reverse().map(([month, event]: any) => {
+  const monthlyEvents = Object.entries(grouped).reverse().map(([month, event]: any) => {
 
-  //   return (
-  //   <div key={month.id}>
-  //     <div key={month.id} className="text-lg">{month}</div>
-  //     {event.map((event:any) => (
-  //         <div className="mb-2" key={event.id}>{event.date}{event.place}</div>   
-  //     ))}
-  //     </div>
-  //   );
-  // });
+    return (
+    <div key={month.id}>
+      <div key={month.id} className="text-lg">{month}</div>
+      {event.map((event:any) => (
+          <div className="mb-2" key={event.id}>{event.date}{event.place}</div>   
+      ))}
+      </div>
+    );
+  });
 
-  // const totalConnections = data?.slice(1).reduce((sum: any, col: any) => sum + Number(col[4] || 0), 0);
-  // const totalEvents = data?.slice(1).reduce((sum: any, col: any) => sum + Number(col[3] || 0), 0);
+  const totalConnections = data?.slice(1).reduce((sum: any, col: any) => sum + Number(col[4] || 0), 0);
+  const totalEvents = data?.slice(1).reduce((sum: any, col: any) => sum + Number(col[3] || 0), 0);
 
   return (
     <>
@@ -50,7 +51,7 @@ export default async function Home() {
           <div className="flex flex-row justify-center w-full opacity-90 font-bold lg:mb-0 md:mb-5 mb-5">
             <DashboardCard
               title="2026 Meetup Events"
-              // place={monthlyEvents}
+              place={monthlyEvents}
               icon={<Newspaper className="text-slate-500" />}
             />
           </div>
@@ -60,20 +61,20 @@ export default async function Home() {
           <div className="flex flex-row justify-center w-full md:flex-row mb-5 lg:h-30 h-25">
             <DashboardCard
               title="Total invested connections"
-              // data={totalConnections}
+              data={totalConnections}
               icon={<Users className=" text-slate-500" />}
             />
           </div>
           <div className="flex flex-row justify-center w-full md:flex-row mb-5 lg:h-30 h-25">
             <DashboardCard
               title="Total meetup events"
-              // data={totalEvents}
+              data={totalEvents}
               icon={<Folder className="text-slate-500" />}
             />
           </div>
         </div>
       </div>
-      {/* <AnalyticsChart /> */}
+      <AnalyticsChart />
     </>
   );
 }
