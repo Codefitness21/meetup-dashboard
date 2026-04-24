@@ -5,6 +5,7 @@ import { Folder, Newspaper, Users } from "lucide-react";
 import AnalyticsChart from "@/components/dashboard/AnalyticsChart";
 import { getGoogleSheet } from "@/src/action";
 
+
 export default async function Home() {
   const data = await getGoogleSheet();
   console.log("Home data", data);
