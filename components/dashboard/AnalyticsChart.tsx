@@ -1,6 +1,6 @@
 "use client"
 
-import GraphChart from "../graph/GraphMetrics";
+// import GraphChart from "../graph/GraphMetrics";
 import { getGoogleSheet } from "@/src/action";
 import { Area, AreaChart, CartesianGrid, XAxis, YAxis} from "recharts"
 
@@ -22,7 +22,7 @@ import {
 // import events from "@/data/events";
 
 export const description = "An area chart with a legend"
-
+const data = await getGoogleSheet(); 
 const chartData = [
   { month: "January", events: 9, people: 28 },
   { month: "February", events: 8, people: 19 },
