@@ -22,7 +22,7 @@ import {
 // import events from "@/data/events";
 
 export const description = "An area chart with a legend"
-const data = await getGoogleSheet(); 
+// const data = await getGoogleSheet(); 
 const chartData = [
   { month: "January", events: 9, people: 28 },
   { month: "February", events: 8, people: 19 },
@@ -41,7 +41,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function AnalyticsChart() {
+export async function AnalyticsChart() {
 
   return (
     <Card className="opacity-90 m-1 lg:mx-14 mb-5">
