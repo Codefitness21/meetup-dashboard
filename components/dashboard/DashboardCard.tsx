@@ -7,10 +7,9 @@ interface DashboardCardProps {
   data?: any;
   icon: React.ReactElement<LucideIcon>;
   place?: any;
-  id?: any;
 }
 
-const DashboardCard = ({ title, data, icon, place, id }: DashboardCardProps) => {
+const DashboardCard = ({ title, data, icon, place}: DashboardCardProps) => {
 
   return (
     <Card className="bg-slate-100 w-9/12 lg:text-2xl dark:bg-slate-800 pb-0">
