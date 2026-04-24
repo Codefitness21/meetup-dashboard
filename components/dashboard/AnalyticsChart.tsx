@@ -17,7 +17,6 @@ import {
   ChartTooltipContent,
   type ChartConfig,
 } from "@/components/ui/chart"
-// import events from "@/data/events";
 
 export const description = "An area chart with a legend"
 

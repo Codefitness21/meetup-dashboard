@@ -19,12 +19,12 @@ const DashboardCard = ({ title, data, icon, place, id }: DashboardCardProps) => 
           <h3>{icon}</h3>
           {title}
         </div>
-        <h3 className="flex flex-row justify-center lg:text-5xl text-3xl dark:text-slate-200 text-slate-700 m-1.5">
+        <div className="flex flex-row justify-center lg:text-5xl text-3xl dark:text-slate-200 text-slate-700 m-1.5">
           {data}
-        </h3>
-        <li className="flex flex-col text-sm dark:text-slate-200 gap-2 h-75 overflow-hidden overflow-y-scroll text-slate-700 pb-5">
+        </div>
+        <div className="flex flex-col text-sm dark:text-slate-200 gap-2 h-75 overflow-hidden overflow-y-scroll text-slate-700 pb-5">
           {place }
-        </li >
+        </div >
       </CardContent>
     </Card>
   );
