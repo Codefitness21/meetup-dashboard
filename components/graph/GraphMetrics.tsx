@@ -12,11 +12,11 @@ acc.push({
   events: 0,
   people: 0,
 })
-acc[acc.length-1].events += Number(col[3])
-  acc[acc.length-1].people += Number(col[4])
+acc[acc.length-1].events += Number(col[3] || [])
+  acc[acc.length-1].people += Number(col[4] || [])
 }else {
-  acc[acc.length-1].events += Number(col[3])
-  acc[acc.length-1].people += Number(col[4])
+  acc[acc.length-1].events += Number(col[3] || [])
+  acc[acc.length-1].people += Number(col[4] || [])
 }
  return acc; 
 }, []);
