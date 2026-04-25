@@ -2,9 +2,8 @@ export const dynamic = "force-dynamic";
 
 import DashboardCard from "@/components/dashboard/DashboardCard";
 import { Folder, Newspaper, Users } from "lucide-react";
-import AnalyticsChart from "@/components/dashboard/AnalyticsChart";
 import { getGoogleSheet } from "@/src/action";
-
+import GraphMetrics from "@/components/graph/GraphMetrics";
 
 export default async function Home() {
   
@@ -74,7 +73,7 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <AnalyticsChart />
+      <GraphMetrics />
     </>
   );
 }

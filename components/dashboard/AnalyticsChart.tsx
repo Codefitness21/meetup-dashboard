@@ -20,14 +20,6 @@ import {
 
 export const description = "An area chart with a legend"
 
-const chartData = [
-  { month: "January", events: 9, people: 28 },
-  { month: "February", events: 8, people: 19 },
-  { month: "March", events: 6, people: 20 },
-  { month: "April", events: 6, people: 18 }, 
-]
-
-
 const chartConfig = {
   events: {
     label: "Events",
@@ -39,7 +31,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function AnalyticsChart() {
+export function AnalyticsChart({chartData}: {chartData:any}) {
   
   return (
     <Card className="opacity-90 m-1 lg:mx-14 mb-5">
@@ -61,6 +53,7 @@ export function AnalyticsChart() {
               right: 12,
             }}
           >
+          
             <CartesianGrid vertical={false} />
             <XAxis className="font-bold"
               dataKey="month"
