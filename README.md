@@ -1,6 +1,6 @@
 # Tech Networking Dashboard
 
-A dashboard for tracking technology networking meetups and the connections made through them. It reads event data from a Google Sheet and presents the 2026 meetup schedule, summary totals for events attended and connections made, and monthly analytics in one place. Background image is AI.
+A dashboard for tracking technology networking meetups and the connections made through them. It reads event data from a Google Sheet and presents the 2026 meetup schedule, summary totals for events attended and connections made, and monthly analytics in one place. Background image created using AI.
 
 <img src="public/img/dashboard.png" alt="Image of dashboard">
 
