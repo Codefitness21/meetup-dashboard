@@ -6,7 +6,7 @@ A dashboard for tracking technology networking meetups and the connections made 
 
 ## Current project goal
 
-The current implementation is a read-only dashboard for reviewing 2026 meetup activities. It lists events by month and summarizes the number of meetup events and invested connections recorded in my google spreadsheet.
+The current implementation is a read-only dashboard for reviewing 2026 meetup activities. It lists events by month and summarizes the number of meetup events and invested connections recorded in my google spreadsheet. I wanted an accountable and fun way of tracking my planned events, so I built one. What began as a simple spreadsheet quickly evolved into a networking dashboard site built with Next.js, React, TypeScript, Tailwind, and Shadcn, and deployed to Vercel. My dashboard tracks a list of events, total invested connections, and meetup events, and displays a monthly breakdown of people met and events attended on my analytics chart with the use of google sheets API. I enter the data into my spreadsheet, which is then displayed on my dashboard. It makes it easier to remember and track the event in which I met someone.
 
 ## Site structure
 
